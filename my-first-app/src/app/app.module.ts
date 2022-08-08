@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { ServerComponent } from './server/server.component';
 import { AppComponent } from './app.component';
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, ServerComponent],
   imports: [BrowserModule],
   providers: [],
   bootstrap: [AppComponent],
