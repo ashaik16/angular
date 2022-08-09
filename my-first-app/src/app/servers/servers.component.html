@@ -10,6 +10,9 @@
 <input type="text" class="form-control" [(ngModel)]="serverName" />
 
 <!-- <p>{{ serverName }}</p> -->
-<p *ngIf="isServerCreated">{{ serverStatus }}</p>
+<p *ngIf="isServerCreated; else noServer">{{ serverStatus }}</p>
+<ng-template #noServer>
+  <p>No Server Created</p>
+</ng-template>
 <app-server></app-server>
 <app-server></app-server>
