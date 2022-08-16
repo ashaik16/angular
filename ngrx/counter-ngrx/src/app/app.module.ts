@@ -12,6 +12,7 @@ import { FormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './shared/header/header.component';
 import { AppRoutingModule } from './app-routing.module';
+import { PostlistComponent } from './posts/postlist/postlist.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { AppRoutingModule } from './app-routing.module';
     CustomCounterInputComponent,
     HomeComponent,
     HeaderComponent,
+    PostlistComponent,
   ],
   imports: [
     BrowserModule,

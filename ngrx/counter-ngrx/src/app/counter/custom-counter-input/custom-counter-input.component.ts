@@ -19,11 +19,10 @@ export class CustomCounterInputComponent implements OnInit {
   ngOnInit(): void {
     // this.store.select(getName).subscribe((namevar) => {
     //   console.log('Channel Name Observable called');
-    //   this.name = namevar;
+    //   this.name = namevar;d
     // });
 
     this.name$ = this.store.select(getName);
-    console.log('Channel Name Observable called');
   }
   onAddCounter() {
     this.store.dispatch(customCounter({ inputCounter: +this.inputCounter }));
