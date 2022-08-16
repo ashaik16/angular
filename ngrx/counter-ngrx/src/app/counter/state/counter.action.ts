@@ -7,4 +7,4 @@ export const customCounter = createAction(
   'customCounter',
   props<{ inputCounter: number }>()
 );
-//export const customCounter = createAction('customCounter',props<{ inputCounter: number }>());
+export const customName = createAction('customName');

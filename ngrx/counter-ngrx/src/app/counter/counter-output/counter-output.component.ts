@@ -9,21 +9,15 @@ import { CounterState } from '../state/counter.state';
   styleUrls: ['./counter-output.component.css'],
 })
 export class CounterOutputComponent implements OnInit {
-  // @Input() counter;
   counter: number = 0;
-  counter$: Observable<{ counter: number }>;
-  // counterSubscription: Subscription;
+  //counter$: Observable<{ counter: number }>;
   constructor(private store: Store<{ counterModule: CounterState }>) {}
 
   ngOnInit(): void {
-    // this.counterSubscription = this.store
-    //   .select('counterModule')
-    //   .subscribe((data) => {
-    //     this.counter = data.counter;
-    //   });
-    this.counter$ = this.store.select('counterModule');
+    this.store.select('counterModule').subscribe((data) => {
+      console.log(' Counter Observable called');
+      this.counter = data.counter;
+    });
+    //this.counter$ = this.store.select('counterModule');
   }
-  // ngOnDestroy(): void {
-  //   this.counterSubscription.unsubscribe();
-  // }
 }
