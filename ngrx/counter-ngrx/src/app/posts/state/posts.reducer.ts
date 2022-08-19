@@ -7,7 +7,7 @@ const _postReducer = createReducer(
   initialPostState,
   on(addPost, (state, action) => {
     let post = { ...action.post };
-    post.id = state.posts.length + 1;
+    post.id = (state.posts.length + 1).toString();
     return {
       ...state,
       posts: [...state.posts, post],
