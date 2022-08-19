@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { Subscription } from 'rxjs';
 import { Posts } from 'src/app/models/posts.model';
@@ -18,7 +18,11 @@ export class EditPostComponent implements OnInit, OnDestroy {
   post: Posts;
 
   postSubscription: Subscription;
-  constructor(private route: ActivatedRoute, private store: Store<AppState>) {}
+  constructor(
+    private route: ActivatedRoute,
+    private store: Store<AppState>,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
     this.route.paramMap.subscribe((params) => {
@@ -51,6 +55,7 @@ export class EditPostComponent implements OnInit, OnDestroy {
       description: this.postForm.value.description,
     };
     this.store.dispatch(updatePost({ updatedPost }));
+    this.router.navigate(['postList']);
   }
   ngOnDestroy() {
     if (this.postSubscription) {
