@@ -12,7 +12,9 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from 'src/environments/environment';
 import { AddPostsComponent } from './posts/add-posts/add-posts.component';
 import { EditPostComponent } from './posts/edit-post/edit-post.component';
-
+import { EffectsModule } from '@ngrx/effects';
+import { HttpClientModule } from '@angular/common/http';
+import { AuthEffects } from './auth/state/auth.effects';
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,6 +30,8 @@ import { EditPostComponent } from './posts/edit-post/edit-post.component';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
+    HttpClientModule,
+    EffectsModule.forRoot([AuthEffects]),
     StoreModule.forRoot({}),
     StoreDevtoolsModule.instrument({
       logOnly: environment.production,
