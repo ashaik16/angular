@@ -15,6 +15,7 @@ import { EditPostComponent } from './posts/edit-post/edit-post.component';
 import { EffectsModule } from '@ngrx/effects';
 import { HttpClientModule } from '@angular/common/http';
 import { AuthEffects } from './auth/state/auth.effects';
+import { LoadingSpinnerComponent } from './shared/loading-spinner/loading-spinner.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,6 +24,7 @@ import { AuthEffects } from './auth/state/auth.effects';
     PostlistComponent,
     AddPostsComponent,
     EditPostComponent,
+    LoadingSpinnerComponent,
   ],
   imports: [
     BrowserModule,
