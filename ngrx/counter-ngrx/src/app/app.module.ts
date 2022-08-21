@@ -10,14 +10,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { PostlistComponent } from './posts/postlist/postlist.component';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from 'src/environments/environment';
-import { appReducer } from './state/app.state';
 import { AddPostsComponent } from './posts/add-posts/add-posts.component';
 import { EditPostComponent } from './posts/edit-post/edit-post.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-
     HomeComponent,
     HeaderComponent,
     PostlistComponent,
@@ -30,7 +28,7 @@ import { EditPostComponent } from './posts/edit-post/edit-post.component';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    StoreModule.forRoot(appReducer),
+    StoreModule.forRoot({}),
     StoreDevtoolsModule.instrument({
       logOnly: environment.production,
     }),
